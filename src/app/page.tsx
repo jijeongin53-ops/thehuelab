@@ -15,9 +15,9 @@ export default function Home() {
     <main className="min-h-screen bg-black w-full overflow-x-hidden selection:bg-accent-color selection:text-white">
       {/* Header */}
       <header className="fixed top-0 inset-x-0 h-20 border-b border-white/10 bg-black/50 backdrop-blur-md z-50 flex items-center px-4 md:px-12">
-        <div className="flex items-center gap-2">
-          <div className="w-8 h-8 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-lg"></div>
-          <span className="text-xl font-bold tracking-tight text-white">theHUElab</span>
+        <div className="flex items-center gap-2 md:gap-3">
+          <img src="/logo.png" alt="theHUElab" className="h-8 md:h-10 w-auto object-contain" />
+          <span className="text-xl font-bold tracking-tight text-white hidden sm:block">theHUElab</span>
         </div>
         
         <nav className="ml-auto hidden md:flex items-center gap-8 text-sm font-medium text-gray-400 mr-8">
