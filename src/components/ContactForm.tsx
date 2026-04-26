@@ -4,8 +4,10 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
 import { submitInquiry } from "@/app/actions/submitInquiry";
+import { useLanguage } from "@/lib/i18n";
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState("");
 
@@ -17,12 +19,15 @@ export default function ContactForm() {
     const formData = new FormData(e.currentTarget);
     try {
       const res = await submitInquiry(formData);
-      setMessage(res.message);
+      // For simplicity, we just check if it was successful and use the localized message.
       if (res.success) {
+        setMessage(t.contact.msgSuccess);
         (e.target as HTMLFormElement).reset();
+      } else {
+        setMessage(t.contact.msgError);
       }
     } catch (err) {
-      setMessage("오류가 발생했습니다. 잠시 후 다시 시도해주세요.");
+      setMessage(t.contact.msgError);
     } finally {
       setLoading(false);
     }
@@ -31,9 +36,9 @@ export default function ContactForm() {
   return (
     <section id="contact" className="py-24 px-4 bg-gradient-to-b from-transparent to-white/[0.02]">
       <div className="max-w-3xl mx-auto text-center px-2">
-        <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase tracking-tight text-balance">Let's Build the Future Together</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase tracking-tight text-balance">{t.contact.title}</h2>
         <p className="text-gray-400 mb-12 text-balance leading-relaxed">
-          간단한 정보를 남겨주시면, 더휴랩의 전문가가 가장 최적화된 AI 도입 솔루션을 제안해 드립니다.
+          {t.contact.desc}
         </p>
 
         <motion.form
@@ -45,26 +50,26 @@ export default function ContactForm() {
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-2">기업명</label>
-              <input required name="company" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" placeholder="예: 구글 코리아" />
+              <label className="block text-sm font-medium text-gray-400 mb-2">{t.contact.company}</label>
+              <input required name="company" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-2">당당자 성함</label>
-              <input required name="name" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" placeholder="홍길동" />
+              <label className="block text-sm font-medium text-gray-400 mb-2">{t.contact.name}</label>
+              <input required name="name" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-2">연락처</label>
-              <input required name="phone" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" placeholder="010-0000-0000" />
+              <label className="block text-sm font-medium text-gray-400 mb-2">{t.contact.phone}</label>
+              <input required name="phone" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" />
             </div>
             <div>
-              <label className="block text-sm font-medium text-gray-400 mb-2">이메일</label>
-              <input required type="email" name="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" placeholder="hello@example.com" />
+              <label className="block text-sm font-medium text-gray-400 mb-2">{t.contact.email}</label>
+              <input required type="email" name="email" className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors" />
             </div>
           </div>
           
           <div className="mb-8">
-            <label className="block text-sm font-medium text-gray-400 mb-2">문의 내용</label>
-            <textarea required name="message" rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors resize-none" placeholder="어떤 서비스가 필요하신지 자유롭게 적어주세요."></textarea>
+            <label className="block text-sm font-medium text-gray-400 mb-2">{t.contact.message}</label>
+            <textarea required name="message" rows={4} className="w-full bg-black/50 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-accent-color transition-colors resize-none"></textarea>
           </div>
 
           <button
@@ -72,8 +77,8 @@ export default function ContactForm() {
             type="submit"
             className="w-full bg-white text-black font-bold py-4 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-200 transition-colors disabled:opacity-50"
           >
-            {loading ? "전송 중..." : (
-              <>무료 상담 신청하기 <Send className="w-4 h-4" /></>
+            {loading ? t.contact.btnSending : (
+              <>{t.contact.btnSubmit} <Send className="w-4 h-4" /></>
             )}
           </button>
 
