@@ -20,8 +20,8 @@ export default function CEOProfile() {
               viewport={{ once: true }}
               className="glass-card p-8"
             >
-              <div className="w-24 h-24 rounded-full bg-gradient-to-tr from-accent-color to-purple-500 mb-6 flex items-center justify-center text-4xl shadow-lg shadow-accent-color/20">
-                👨‍💼
+              <div className="w-24 h-24 rounded-full mb-6 flex items-center justify-center shadow-lg shadow-accent-color/20 overflow-hidden relative border-2 border-white/10 shrink-0">
+                <img src="/profile.jpg" alt="theHUElab CEO" className="w-full h-full object-cover" />
               </div>
               <h3 className="text-3xl font-bold mb-2">{t.ceo.title}</h3>
               <p className="text-accent-color font-medium mb-6 leading-relaxed">{t.ceo.role}</p>

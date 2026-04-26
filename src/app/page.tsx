@@ -17,7 +17,7 @@ export default function Home() {
       <header className="fixed top-0 inset-x-0 h-20 border-b border-white/10 bg-black/50 backdrop-blur-md z-50 flex items-center px-4 md:px-12">
         <div className="flex items-center gap-2">
           <div className="w-8 h-8 bg-gradient-to-tr from-blue-500 to-purple-500 rounded-lg"></div>
-          <span className="text-xl font-bold tracking-tight text-white">THE HUE LAB</span>
+          <span className="text-xl font-bold tracking-tight text-white">theHUElab</span>
         </div>
         
         <nav className="ml-auto hidden md:flex items-center gap-8 text-sm font-medium text-gray-400 mr-8">
@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="py-8 border-t border-white/10 text-center text-gray-500 text-sm">
-        <p>© {new Date().getFullYear()} THE HUE LAB. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} theHUElab. All rights reserved.</p>
         <p className="mt-1">{t.ceo.address} | Tel: {t.ceo.phone}</p>
       </footer>
     </main>

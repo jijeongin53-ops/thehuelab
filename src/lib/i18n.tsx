@@ -66,7 +66,7 @@ const dictionaries: Record<Language, Dictionary> = {
     hero: {
       badge: "Unprecedented Smart Creators",
       titleLine1: "Accelerate Your Future",
-      titleLine2: "with THE HUE LAB",
+      titleLine2: "with theHUElab",
       desc: "From custom AI models to enterprise workflow automation and next-gen event planning. We design overwhelming growth with the most advanced technologies.",
       btnContact: "Start a Project",
       btnAbout: "Discover Us"
@@ -81,8 +81,8 @@ const dictionaries: Record<Language, Dictionary> = {
       ]
     },
     ceo: {
-      title: "Ji Jeong-in",
-      role: "CEO of The Hue Lab / Smart Creator",
+      title: "Rei JI",
+      role: "CEO of theHUElab / Smart Creator",
       address: "Room 305, 33 Bongnaenaru-ro, Yeongdo-gu, Busan",
       phone: "010-8203-0046",
       historyTitle: "Key Projects & Career",
@@ -122,7 +122,7 @@ const dictionaries: Record<Language, Dictionary> = {
     },
     contact: {
       title: "Let's Build the Future Together",
-      desc: "Leave simple details and The Hue Lab experts will propose the most optimized AI solutions for you.",
+      desc: "Leave simple details and theHUElab experts will propose the most optimized AI solutions for you.",
       company: "Company Name",
       name: "Contact Name",
       phone: "Phone Number",
@@ -139,10 +139,10 @@ const dictionaries: Record<Language, Dictionary> = {
     hero: {
       badge: "어디에서도 본 적 없는 스마트크리에이터",
       titleLine1: "미래를 앞당기는",
-      titleLine2: "AI 솔루션, 더휴랩",
+      titleLine2: "AI 솔루션, theHUElab",
       desc: "커스텀 AI 모델부터 기업 맞춤형 업무 자동화, 차원이 다른 전시행사 대행까지. 가장 진보된 기술로 귀사의 압도적 성장을 디자인합니다.",
       btnContact: "프로젝트 의뢰하기",
-      btnAbout: "더휴랩 알아보기"
+      btnAbout: "theHUElab 알아보기"
     },
     business: {
       subtitle: "Our Businesses",
@@ -155,7 +155,7 @@ const dictionaries: Record<Language, Dictionary> = {
     },
     ceo: {
       title: "지정인",
-      role: "더휴랩 대표 / 스마트크리에이터",
+      role: "theHUElab 대표 / 스마트크리에이터",
       address: "부산시 영도구 봉래나루로 33, 305호",
       phone: "010-8203-0046",
       historyTitle: "주요 프로젝트 및 경력",
@@ -195,7 +195,7 @@ const dictionaries: Record<Language, Dictionary> = {
     },
     contact: {
       title: "프로젝트에 대해 이야기해볼까요?",
-      desc: "간단한 정보를 남겨주시면, 더휴랩의 전문가가 가장 최적화된 AI 도입 솔루션을 제안해 드립니다.",
+      desc: "간단한 정보를 남겨주시면, theHUElab의 전문가가 가장 최적화된 AI 도입 솔루션을 제안해 드립니다.",
       company: "기업명",
       name: "담당자 성함",
       phone: "연락처",
@@ -212,10 +212,10 @@ const dictionaries: Record<Language, Dictionary> = {
     hero: {
       badge: "かつてないスマートクリエイター",
       titleLine1: "未来を加速する",
-      titleLine2: "AIソリューション、THE HUE LAB",
+      titleLine2: "AIソリューション、theHUElab",
       desc: "カスタムAIモデルから企業の業務自動化、別次元のイベント企画代行まで。最先端の技術で圧倒的な成長をデザインします。",
       btnContact: "プロジェクトを依頼する",
-      btnAbout: "当社の詳細"
+      btnAbout: "theHUElabの詳細"
     },
     business: {
       subtitle: "Our Businesses",
@@ -228,7 +228,7 @@ const dictionaries: Record<Language, Dictionary> = {
     },
     ceo: {
       title: "ジ・ジョンイン",
-      role: "THE HUE LAB 代表 / スマートクリエイター",
+      role: "theHUElab 代表 / スマートクリエイター",
       address: "釜山広域市影島区蓬莱ナル路33, 305号",
       phone: "010-8203-0046",
       historyTitle: "主要プロジェクト・経歴",
@@ -268,7 +268,7 @@ const dictionaries: Record<Language, Dictionary> = {
     },
     contact: {
       title: "未来を共に構築しましょう",
-      desc: "簡単な情報を残していただければ、THE HUE LABの専門家が最適なAIソリューションをご提案します。",
+      desc: "簡単な情報を残していただければ、theHUElabの専門家が最適なAIソリューションをご提案します。",
       company: "会社名",
       name: "担当者名",
       phone: "電話番号",
