@@ -27,9 +27,9 @@ const businesses = [
 export default function Business() {
   return (
     <section id="services" className="py-24 px-4 max-w-6xl mx-auto">
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 px-2">
         <h2 className="text-sm font-semibold tracking-widest text-accent-color uppercase mb-2">Our Businesses</h2>
-        <h3 className="text-3xl md:text-5xl font-bold">압도적인 퍼포먼스를 만드는 동력</h3>
+        <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-tight">Driving Absolute Performance</h3>
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-3 md:grid-rows-2 gap-6 auto-rows-[minmax(250px,auto)]">

@@ -30,9 +30,9 @@ export default function ContactForm() {
 
   return (
     <section id="contact" className="py-24 px-4 bg-gradient-to-b from-transparent to-white/[0.02]">
-      <div className="max-w-3xl mx-auto text-center">
-        <h2 className="text-3xl md:text-5xl font-bold mb-6">프로젝트에 대해 이야기해볼까요?</h2>
-        <p className="text-gray-400 mb-12">
+      <div className="max-w-3xl mx-auto text-center px-2">
+        <h2 className="text-3xl md:text-4xl font-bold mb-6 uppercase tracking-tight text-balance">Let's Build the Future Together</h2>
+        <p className="text-gray-400 mb-12 text-balance leading-relaxed">
           간단한 정보를 남겨주시면, 더휴랩의 전문가가 가장 최적화된 AI 도입 솔루션을 제안해 드립니다.
         </p>
 

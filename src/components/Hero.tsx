@@ -15,13 +15,13 @@ export default function Hero() {
         className="z-10 max-w-4xl"
       >
         <span className="inline-block py-1 px-3 rounded-full glass-card text-sm text-gray-300 font-medium mb-6">
-          어디에서도 본 적 없는 스마트크리에이터
+          Unprecedented Smart Creators
         </span>
-        <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-8">
-          미래를 앞당기는<br />
-          <span className="text-gradient">AI 솔루션, 더휴랩</span>
+        <h1 className="text-4xl md:text-7xl font-bold tracking-tight mb-8 leading-tight">
+          Accelerate Your Future<br />
+          <span className="text-gradient">with THE HUE LAB</span>
         </h1>
-        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed">
+        <p className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed text-balance">
           커스텀 AI 모델부터 기업 맞춤형 업무 자동화, 차원이 다른 전시행사 대행까지.
           가장 진보된 기술로 귀사의 압도적 성장을 디자인합니다.
         </p>

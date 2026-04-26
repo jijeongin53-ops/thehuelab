@@ -28,9 +28,9 @@ const historyData = [
 export default function History() {
   return (
     <section id="history" className="py-24 px-4 max-w-4xl mx-auto">
-      <div className="text-center mb-16">
+      <div className="text-center mb-16 px-2">
         <h2 className="text-sm font-semibold tracking-widest text-accent-color uppercase mb-2">History & References</h2>
-        <h3 className="text-3xl md:text-5xl font-bold">성공을 증명하는 발자취</h3>
+        <h3 className="text-3xl md:text-4xl font-bold uppercase tracking-tight">Our Proven Milestones</h3>
       </div>
 
       <div className="space-y-8 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-white/20 before:to-transparent">
