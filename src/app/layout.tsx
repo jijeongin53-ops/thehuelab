@@ -17,20 +17,25 @@ export const metadata: Metadata = {
   description: "Accelerate Your Future with AI",
 };
 
-import { LanguageProvider } from "@/lib/i18n";
+export const revalidate = 60; // Revalidate every 60 seconds
 
-export default function RootLayout({
+import { LanguageProvider } from "@/lib/i18n";
+import { getI18nDictionaries } from "@/lib/googleSheets";
+
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const dicts = await getI18nDictionaries();
+
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <LanguageProvider>
+        <LanguageProvider initialDictionaries={dicts}>
           {children}
         </LanguageProvider>
       </body>

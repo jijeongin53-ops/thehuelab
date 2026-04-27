@@ -1,4 +1,7 @@
 import { google } from "googleapis";
+import set from "lodash/set";
+import cloneDeep from "lodash/cloneDeep";
+import { defaultDictionaries, Language, Dictionary } from "./i18nData";
 
 export async function getGoogleSheetsAuth() {
   const email = process.env.GOOGLE_CLIENT_EMAIL;
@@ -60,4 +63,46 @@ export async function appendToSheet(range: string, values: any[][]) {
     console.error("Error appending to sheet:", error);
     return false;
   }
+}
+
+export async function getI18nDictionaries(): Promise<Record<Language, Dictionary>> {
+  const data = await getSheetData("Translations!A:E"); // Adjust range as needed
+  
+  // Start with default dictionaries as a fallback base
+  const result = cloneDeep(defaultDictionaries);
+
+  if (!data || data.length < 2) {
+    return result;
+  }
+
+  // Assuming row 0 is header: ['Key', 'KO', 'EN', 'JA']
+  const headers = data[0].map((h: string) => h.toLowerCase().trim());
+  const keyIndex = headers.findIndex(h => h === 'key');
+  
+  if (keyIndex === -1) {
+    console.warn("No 'Key' column found in sheet. Returning default dictionaries.");
+    return result;
+  }
+
+  // Find column indexes for each language
+  const langIndexes: Record<Language, number> = {
+    ko: headers.findIndex(h => h === 'ko'),
+    en: headers.findIndex(h => h === 'en'),
+    ja: headers.findIndex(h => h === 'ja'),
+  };
+
+  for (let i = 1; i < data.length; i++) {
+    const row = data[i];
+    const key = row[keyIndex];
+    if (!key) continue;
+
+    for (const lang of Object.keys(langIndexes) as Language[]) {
+      const idx = langIndexes[lang];
+      if (idx !== -1 && row[idx] !== undefined) {
+        set(result[lang], key, row[idx]);
+      }
+    }
+  }
+
+  return result;
 }

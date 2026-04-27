@@ -53,7 +53,7 @@ export default function CEOProfile() {
                 <h4 className="text-xl font-bold">{t.ceo.historyTitle}</h4>
               </div>
               <ul className="text-gray-300 space-y-3 leading-relaxed">
-                {t.ceo.historyItems.map((item, i) => (
+                {t.ceo.historyItems.filter(Boolean).map((item, i) => (
                   <li key={i}>• {item}</li>
                 ))}
               </ul>
@@ -72,7 +72,7 @@ export default function CEOProfile() {
                   <h4 className="text-xl font-bold">{t.ceo.bookTitle}</h4>
                 </div>
                 <ul className="text-gray-300 space-y-3 text-sm">
-                  {t.ceo.bookItems.map((item, i) => (
+                  {t.ceo.bookItems.filter(Boolean).map((item, i) => (
                     <li key={i}>• {item}</li>
                   ))}
                   <li className="pt-2 border-t border-border-color mt-2 text-gray-400">
@@ -93,7 +93,7 @@ export default function CEOProfile() {
                   <h4 className="text-xl font-bold">{t.ceo.certTitle}</h4>
                 </div>
                 <ul className="text-gray-300 space-y-3 text-sm">
-                  {t.ceo.certItems.map((item, i) => (
+                  {t.ceo.certItems.filter(Boolean).map((item, i) => (
                     <li key={i}>• {item}</li>
                   ))}
                 </ul>
