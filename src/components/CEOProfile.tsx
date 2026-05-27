@@ -52,7 +52,7 @@ export default function CEOProfile() {
                 <Briefcase className="text-blue-400 w-5 h-5 shrink-0" />
                 <h4 className="text-xl font-bold">{t.ceo.historyTitle}</h4>
               </div>
-              <ul className="text-gray-300 space-y-3 leading-relaxed">
+              <ul className="text-gray-300 space-y-3 leading-relaxed break-keep">
                 {t.ceo.historyItems.filter(Boolean).map((item, i) => (
                   <li key={i}>• {item}</li>
                 ))}
@@ -71,10 +71,11 @@ export default function CEOProfile() {
                   <BookOpen className="text-yellow-400 w-5 h-5 shrink-0" />
                   <h4 className="text-xl font-bold">{t.ceo.bookTitle}</h4>
                 </div>
-                <ul className="text-gray-300 space-y-3 text-sm">
-                  {t.ceo.bookItems.filter(Boolean).map((item, i) => (
-                    <li key={i}>• {item}</li>
-                  ))}
+                <ul className="text-gray-300 space-y-3 text-sm break-keep leading-relaxed">
+                  {t.ceo.bookItems.filter(Boolean).map((item, i) => {
+                    const formattedItem = item.replace(/ \((.*?)\)/g, (match) => match.replace(/ /g, '\u00A0'));
+                    return <li key={i}>• {formattedItem}</li>;
+                  })}
                   <li className="pt-2 border-t border-border-color mt-2 text-gray-400">
                     {t.ceo.bookFooter}
                   </li>
@@ -92,7 +93,7 @@ export default function CEOProfile() {
                   <Award className="text-pink-400 w-5 h-5 shrink-0" />
                   <h4 className="text-xl font-bold">{t.ceo.certTitle}</h4>
                 </div>
-                <ul className="text-gray-300 space-y-3 text-sm">
+                <ul className="text-gray-300 space-y-3 text-sm break-keep leading-relaxed">
                   {t.ceo.certItems.filter(Boolean).map((item, i) => (
                     <li key={i}>• {item}</li>
                   ))}
